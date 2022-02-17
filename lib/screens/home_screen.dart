@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 future: futureMovies,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    return ListView.builder(
+                    return ListView.builder(itemCount: snapshot.data!.length,
                         scrollDirection: Axis.vertical,
                         itemBuilder: (_, index) {
                           final Movie movie = snapshot.data![index];
