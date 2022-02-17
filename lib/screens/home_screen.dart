@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // List<Movie> moviesList = [];
-  // List<Movie> moviesDisplayList=[];
+   List<Movie> moviesDisplayList=[];
 
   Future<List<Movie>> loadData() async {
     try {
@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     futureMovies = loadData();
+
   }
 
   @override
@@ -60,8 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         scrollDirection: Axis.vertical,
                         itemBuilder: (_, index) {
                           final Movie movie = snapshot.data![index];
-                          return MovieCard(
-                              movie.posterPath, movie.originalTitle);
+                          return MovieCard(snapshot.data![index]);
                         });
                   } else if (snapshot.hasError) {
                     return Text("${snapshot.error}");

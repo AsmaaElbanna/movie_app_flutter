@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_dio_poc/models/movie.dart';
 
 class MovieCard extends StatelessWidget {
 
-  final String imageURL;
-  final String title;
 
-  MovieCard(this.imageURL,this.title);
+  final Movie movie;
+
+  MovieCard(this.movie);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +18,7 @@ class MovieCard extends StatelessWidget {
           decoration:  BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             image: DecorationImage(fit: BoxFit.fill,
-                image: NetworkImage(imageURL)),
+                image: NetworkImage(movie.posterPath)),
             boxShadow: [
               BoxShadow(
                 color: Colors.yellow.shade900,
@@ -32,7 +33,7 @@ class MovieCard extends StatelessWidget {
           ),
         ),
           SizedBox(height: 20,),
-          Text(title,style: TextStyle(fontFamily: 'Courgette',fontSize: 18),)
+          Text(movie.originalTitle,style: TextStyle(fontFamily: 'Courgette',fontSize: 18),)
       ],),
 
     );
