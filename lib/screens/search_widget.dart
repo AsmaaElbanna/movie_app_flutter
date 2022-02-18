@@ -30,7 +30,7 @@ class _SearchWidgetState extends State<SearchWidget> {
       margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Colors.white,
+        color: Colors.grey,
         border: Border.all(color: Colors.black26),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 8),
