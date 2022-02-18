@@ -20,4 +20,11 @@ class Movie {
         releaseDate: json['release_date'],
         overView: json['overview']);
   }
+  Map<String, dynamic> toJson() => {
+        'poster_path': posterPath,
+        'original_title': originalTitle,
+        'vote_average': voteAverage,
+        'release_date': releaseDate,
+        'overview': overView
+      };
 }
