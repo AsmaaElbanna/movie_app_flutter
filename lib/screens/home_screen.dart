@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app_dio_poc/models/movie.dart';
 import 'package:movie_app_dio_poc/screens/movie_card.dart';
@@ -85,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All Movies'),
+        title: const Text('All Movies'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -123,26 +122,3 @@ class _HomeScreenState extends State<HomeScreen> {
   });
 }
 
-/*
-FutureBuilder<List<Movie>>(
-                future: movies,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                        itemCount: snapshot.data!.length,
-                        scrollDirection: Axis.vertical,
-                        itemBuilder: (_, index) {
-                          final Movie movie = snapshot.data![index];
-                          return MovieCard(snapshot.data![index]);
-                        });
-                  } else if (snapshot.hasError) {
-                    return Text("${snapshot.error}");
-                  }
-                  return const Center(
-                    child: CircularProgressIndicator(
-                      color: Colors.deepOrange,
-                      strokeWidth: 5,
-                    ),
-                  );
-                }),
- */

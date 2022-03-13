@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_dio_poc/models/movie.dart';
-
 import 'movie_details.dart';
 
 class MovieCard extends StatelessWidget {
@@ -14,7 +13,6 @@ class MovieCard extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) =>  MoviesDetailsScreen(movie)));
-
     },focusColor: Colors.deepOrange,
       child: Container(
         padding: EdgeInsets.all(20),
